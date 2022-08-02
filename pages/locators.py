@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')  # создание пары селекторов
+    pass
 
 
 class LoginPageLocators():
@@ -18,3 +18,8 @@ class ProductPageLocators():
     MESSAGE_WITH_PRICE = (By.CSS_SELECTOR, '.alert-info')  # селектор уникальный
     PRICE_FROM_MESSAGE = (By.CSS_SELECTOR, '.alert-info .alertinner strong')  # выбираем первый по поиску
     PRICE_BOOK = (By.CSS_SELECTOR, '.product_main .price_color')  # списком выбираем второй
+
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')  # создание пары селекторов
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, '#login_link_inc')
