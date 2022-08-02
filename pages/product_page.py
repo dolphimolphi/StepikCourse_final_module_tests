@@ -24,3 +24,11 @@ class ProductPage(BasePage):
         # Стоимость корзины совпадает с ценой товара.
         assert self.browser.find_element(*ProductPageLocators.PRICE_FROM_MESSAGE).text == \
                self.browser.find_element(*ProductPageLocators.PRICE_BOOK).text, 'Prices do not match'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ADD_TO_BASKET), \
+            "Success message is presented, but should not be"
+
+    def should_message_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_ADD_TO_BASKET), \
+            'Message is not disappeared'
